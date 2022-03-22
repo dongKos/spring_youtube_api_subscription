@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h1 align="center">구독성공</h1>
+<h2 align="center">{{result}}</h2>
+<input type="hidden" id="result" value="{{result}}">
+<hr />
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var result = $("#result").val();
+		console.log('result', result);
+		if(result == '403') {
+			console.log(localStorage);
+			alert('권한을 다시 설정해주세요!');
+			location.href = '/oauth2/authorization/google';
+		} else {
+			//localStorage.clear();
+			alert('성공!');
+		}
+	});
+</script>
+</html>

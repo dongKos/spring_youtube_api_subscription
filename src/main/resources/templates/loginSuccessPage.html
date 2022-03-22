@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h1 align="center">로그인성공</h1>
+<hr />
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		console.log(localStorage);
+		var channel = localStorage.channel;
+		location.href='/subscribe?channel='+channel;
+	});
+</script>
+</html>

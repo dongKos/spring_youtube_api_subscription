@@ -1,0 +1,25 @@
+\<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<h1 align="center">Hello World!</h1>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var queries = {};
+		$.each(document.location.search.substr(1).split('&'), function (c, q) {
+			var i = q.split('=');
+			queries[i[0].toString()] = i[1].toString();
+		});
+		localStorage.setItem("channel", queries['channel']);
+		location.href = '/oauth2/authorization/google';
+	});
+</script>
+
+</html>
